@@ -38,7 +38,13 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        $form_data = $request->all();
+
+        $post = new Post();
+        $post->fill($form_data);
+
+        $post->save();
+        return redirect()->route('admin.posts.index');
     }
 
     /**

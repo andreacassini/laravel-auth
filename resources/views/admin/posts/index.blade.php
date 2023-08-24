@@ -26,7 +26,7 @@
                                     <a href="{{route('admin.posts.show', $post->id)}}" class="btn btn-sm btn-primary">
                                         <i class="fas fa-eye"></i>
                                     </a>
-                                    <a href="{{route('admin.posts.edit, ')}}" class="btn btn-sm btn-warning">
+                                    <a href="{{route('admin.posts.edit', $post->id)}}" class="btn btn-sm btn-warning">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <form action="#" class="d-inline-block" method="POST">

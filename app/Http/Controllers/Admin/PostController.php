@@ -40,7 +40,9 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
         $form_data = $request->all();
+
         $post = new Post();
+
         if ($request->hasFile('cover_image')) {
             $path = Storage::put('post_image', $request->cover_image);
             $form_data['cover_image'] = $path;
@@ -82,13 +84,20 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePostRequest $request, $id)
+    public function update(UpdatePostRequest $request, Post $post)
     {
         $form_data = $request->all();
-        $post = Post::findOrFail($id);
+        if ($request->hasFile('cover_image')) {
+            if ($post->cover_image) {
+                Storage::delete($post->cover_image);
+            }
+
+            $path = Storage::put('post_image', $request->cover_image);
+            $form_data['cover_image'] = $path;
+        }
 
         $post->update($form_data);
-        return redirect()->route('admin.posts.index', ['post' => $post->id]);
+        return redirect()->route('admin.posts.index');
     }
 
     /**

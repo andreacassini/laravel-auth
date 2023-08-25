@@ -38,7 +38,7 @@
                         <div class="row">
                             <div class="col-12 text-center py-3">
                                 <!-- Edit Button -->
-                                <a href="#" class="btn btn-warning mx-2">
+                                <a href="{{Route('admin.posts.edit', $post->id)}}" class="btn btn-warning mx-2">
                                     <i class="fa-solid fa-edit"></i>
                                 </a>
                                 <form action="#" method="POST" class="d-inline-block">

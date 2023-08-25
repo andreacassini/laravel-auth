@@ -40,14 +40,13 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
         $form_data = $request->all();
-
         $post = new Post();
-
+        dd($form_data);
         if ($request->hasFile('cover_image')) {
             $path = Storage::put('post_image', $request->cover_image);
             $form_data['cover_image'] = $path;
+            dd($form_data);
         }
-
         $post->fill($form_data);
         $post->save();
         return redirect()->route('admin.posts.index');

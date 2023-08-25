@@ -24,7 +24,15 @@ class StorePostRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'cover_image' => 'image|max:250'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'cover_image.image'  => 'Il file caricato deve essere un file immagine',
+            'cover_image.max'  => 'Il nome del file deve essere lungo al massimo :max caratteri'
         ];
     }
 }

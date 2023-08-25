@@ -42,6 +42,11 @@ class PostController extends Controller
         $form_data = $request->all();
 
         $post = new Post();
+
+        if ($request->hasFile('img')) {
+            $path = Storage::put('post_image', $request->img);
+            $formdata['img'] = $path;
+        }
         $post->fill($form_data);
 
         $post->save();

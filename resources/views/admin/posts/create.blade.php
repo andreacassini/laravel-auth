@@ -33,6 +33,11 @@
                 <div class="form-group my-4 col-12 text-center">
                     <button type="submit" class="btn btn-success">Save</button>
                 </div>
+                @if(count($errors) > 0)
+                @foreach ($errors->all() as $error)
+                    <p>{{ $error }}</p>
+                @endforeach
+                @endif
             </form>
         </div>
     </div>

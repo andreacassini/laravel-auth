@@ -14,22 +14,24 @@
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
-                        <div class="row justify-content-around">
-                            <!-- Image -->
-                            <!-- Left -->
-                            <div class="col-4 d-flex justify-content-center">
-                                <h2 class="fs-4 fw-bold py-2 me-4">Content:</h2>
-                                <span class="mt-2 pt-1">{{ $post->content }}</span>
+                        <div class="row">
+                            <div class="col-6">
+                                <img src="{{asset('storage/'.$post->cover_image)}}" alt="img" width="500px">
                             </div>
-                            <div class="col-4 d-flex justify-content-center">
-                                <h2 class="fs-4 fw-bold py-2 me-4">Slug:</h2>
-                                <span class="mt-2 pt-1">{{ $post->slug }}</span>
-                            </div>
-                                
-                                
+                            <div class="col-6">
+                                <div class="row justify-content-around">
+                                <!-- Image -->
+                                <!-- Left -->
+                                <div class="col-12 my-2">
+                                    <h2 class="fs-4 fw-bold py-2 me-4">Content:</h2>
+                                    <span class="mt-2 pt-1">{{ $post->content }}</span>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <h2 class="fs-4 fw-bold py-2 me-4">Slug:</h2>
+                                    <span class="mt-2 pt-1">{{ $post->slug }}</span>
+                                </div>      
                             </div>
                         </div>
-                        
                     </div>
                     <!-- Card Footer -->
                     <div class="card-footer">

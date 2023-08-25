@@ -19,8 +19,8 @@
                     <input type="text" name="title" id="title" class="form-control"  value="{{ old('title') }}">
                 </div>
                 <div class="form-group mt-4">
-                    <label class="control-label">Immagine di copertina:</label>
-                    <input type="file" name="cover_image" id="cover_image" class="form-control @error('cover_image') is_invalid"@enderror>
+                    <label class="control-label">Cover Image:</label>
+                    <input type="file" name="cover_image" id="cover_image" class="form-control">
                 </div>
                 <div class="form-group mt-4">
                     <label for="content">Content:</label>

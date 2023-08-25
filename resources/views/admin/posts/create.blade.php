@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-group mt-4">
                     <label class="control-label">Immagine di copertina:</label>
-                    <input type="file" name="cover_image" id="cover_image" class="form-control @error('cover_image') is_invalid"@enderror  value="{{ old('cover_image') }}">
+                    <input type="file" name="cover_image" id="cover_image" class="form-control @error('cover_image') is_invalid"@enderror>
                 </div>
                 <div class="form-group mt-4">
                     <label for="content">Content:</label>

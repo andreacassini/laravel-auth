@@ -15,19 +15,26 @@
                 <form action="{{route('admin.posts.update', $post->id)}}" method="POST">
                     @csrf
                     @method('PUT')
-                    <div class="form-group">
+                    <div class="form-group my-2">
                         <label class="control-label mb-1">Title:</label>
                         <input type="text" id="title" name="title" class="form-control" placeholder="title" value="{{old('title') ?? $post->title}}">
                     </div>
-                    <div class="form-group my-4">
+                    <div class="form-group my-2">
+                        <div>
+                            <img src="{{asset('storage/'.$post->cover_image)}}" alt="img" width="500px">
+                        </div>
+                        <label class="control-label mb-1">Cover Image:</label>
+                        <input type="file" id="cover_image" name="cover_image" class="form-control">
+                    </div>
+                    <div class="form-group my-2">
                         <label class="control-label mb-1">Content:</label>
                         <input type="text" id="content" name="content" class="form-control" placeholder="content" value="{{old('content') ?? $post->content}}">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group my-2">
                         <label class="control-label mb-1">Slug:</label>
                         <input type="text" id="slug" name="slug" class="form-control" placeholder="slug" value="{{old('slug') ?? $post->slug}}">
                     </div>
-                    <div class=" form-group my-4">
+                    <div class=" form-group my-2">
                         <button type="submit" class="btn btn-success"> Save</button>
                     </div>
                 </form>
